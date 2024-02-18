@@ -3,7 +3,7 @@ import React from 'react'
 
 const Project = () => {
   return (
-    <div className='bg-[url("/images/bg.jpg")] bg-no-repeat h-fit w-full bg-cover py-16'>
+    <div id="project" className='bg-[url("/images/bg.jpg")] bg-no-repeat h-fit w-full bg-cover py-16'>
         <div className='text-white text-center'>
         <p className='text-lg'>Projects</p>
         <p className='text-5xl font-bold pb-16'>Collection Of My Projects</p>

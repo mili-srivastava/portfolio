@@ -4,7 +4,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <div className="bg-black h-fit w-full pt-10 pb-20 px-16">
+    <div id="contact" className="bg-black h-fit w-full pt-10 pb-20 px-16">
       <div className="text-center">
         <p className="text-gray-200 text-lg">Connect With Me</p>
         <p className="text-4xl md:text-5xl font-bold text-white">

@@ -77,6 +77,7 @@ const Navbar = () => {
           </p>
 
           <div className="flex gap-3 items-center justify-center z-50">
+            <Link href="nkedin.com/in/mili-srivastav/">
             <Image
               src="/linkedin.svg"
               width={500}
@@ -84,6 +85,8 @@ const Navbar = () => {
               className="w-6 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out "
               alt="linkedin-image"
             />
+            </Link>
+            <Link href="https://www.instagram.com/milii_____/">
             <Image
               src="/instagram.svg"
               width={500}
@@ -91,6 +94,8 @@ const Navbar = () => {
               className="w-6 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
               alt="instagram-image"
             />
+            </Link>
+            <Link href="https://github.com/mili-srivastava">
             <Image
               src="/github.svg"
               width={500}
@@ -98,7 +103,8 @@ const Navbar = () => {
               className="w-6 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
               alt="github-image"
             />
-            <MdOutlineMail className="text-2xl text-yellow-600 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out" />
+            </Link>
+            <Link href="mailto:milisrivastava42@gmail.com"> <MdOutlineMail className="text-2xl text-yellow-600 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out" /></Link>
           </div>
           <div className="grid px-5 gap-3 justify-center py-5">
             <div className="flex gap-3 items-center hover:bg-slate-500 hover:rounded-xl transition-all hover:scale-125 px-5  cursor-pointer ">
@@ -111,11 +117,11 @@ const Navbar = () => {
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <GiStarFormation className="text-2xl" />
-              <p className="text-lg text-white ">Skills</p>
+              <Link href="#skills" className="text-lg text-white ">Skills</Link>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <FaFileCode className="text-2xl" />
-              <p className="text-lg text-white">Projects</p>
+              <Link href="#project" className="text-lg text-white">Projects</Link>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <TfiWrite className="text-2xl" />
@@ -151,7 +157,7 @@ const Navbar = () => {
           Skills
         </Link>
         <Link
-          href="/"
+          href="#project"
           className="hover:bg-gray-700 hover:font-medium text-lg rounded-xl px-3 transition-all hover:scale-125 "
         >
           Projects
@@ -164,9 +170,9 @@ const Navbar = () => {
         </Link>
       </div>
       <div>
-        <button className="bg-blue-500 hidden md:flex  px-3 py-1 rounded-xl">
+        <Link href="#contact" className="bg-blue-500 hidden md:flex  px-3 py-1 rounded-xl">
           Get In Touch
-        </button>
+        </Link>
       </div>
       <IoMenuOutline
         onClick={openMenu}
