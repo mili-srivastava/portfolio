@@ -3,35 +3,49 @@
 @tailwind utilities;
 
 @keyframes moveVertical {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
   }
-
-  .move-up-animation {
-    animation: moveVertical 3s infinite; 
+  50% {
+    transform: translateY(-20px);
   }
-
-  .bg{
-   background-color: rgba(255, 255, 255, 0.4);
+  100% {
+    transform: translateY(0);
   }
+}
 
-.bg-gradient{
-    height: fit-content;
-    width: 100%;
-    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
-    background-size: 300% 300%;
-    animation: color 12s ease-in-out infinite;
+.move-up-animation {
+  animation: moveVertical 3s infinite;
+}
+
+.bg {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.bg-gradient {
+  height: fit-content;
+  width: 100%;
+  background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
 }
 
 @keyframes color {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-gradient {
+  background: #027ccf;
+  background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 }

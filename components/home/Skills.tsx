@@ -8,7 +8,7 @@ type SkillsProps = {
 
 const Skills = () => {
   return (
-    <div className="bg-black text-white">
+    <div id="skills" className="bg-black text-white">
       <div className="border-l-2 border-white z-50 flex mx-auto w-2 h-24"></div>
       <div className="p-3">
         <p className="text-xl text-center pt-5">Skills</p>

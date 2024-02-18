@@ -145,7 +145,7 @@ const Navbar = () => {
           About
         </Link>
         <Link
-          href="/"
+          href="#skills"
           className="hover:bg-gray-700 hover:font-medium text-lg rounded-xl px-3 transition-all hover:scale-125 "
         >
           Skills
