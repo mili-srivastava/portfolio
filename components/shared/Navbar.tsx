@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BsFillInfoCircleFill } from "react-icons/bs";
-import { FaFileCode} from "react-icons/fa";
+import { FaFileCode } from "react-icons/fa";
 import { GiStarFormation } from "react-icons/gi";
 import { IoMenuOutline } from "react-icons/io5";
 import { MdHome, MdOutlineMail } from "react-icons/md";
@@ -37,7 +37,7 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <div className={isScrolled? `text-white z-50 fixed w-full bg-[#00000080] px-5 py-2 flex justify-between items-center` :`text-white z-50 fixed w-full bg-black px-5 py-2 flex justify-between items-center`}>
+    <div className={isScrolled ? `text-white z-50 fixed w-full bg-[#00000080] px-5 py-2 flex justify-between items-center` : `text-white z-50 fixed w-full bg-black px-5 py-2 flex justify-between items-center`}>
       <div>
         <div className="flex gap-2 items-center">
           <Image
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div
           className={
             menu
-              ? ` bg-black z-50 absolute top-0 right-0 w-[60%] h-fit py-5`
+              ? ` bg-black z-50 absolute h-screen top-0 right-0 w-[60%] py-5`
               : `hidden `
           }
         >
@@ -76,65 +76,65 @@ const Navbar = () => {
             Mili Srivastava
           </p>
 
-          <div className="flex gap-3 items-center justify-center z-50">
+          <div className="flex gap-3 items-center justify-center py-3 z-50">
             <Link href="nkedin.com/in/mili-srivastav/">
-            <Image
-              src="/linkedin.svg"
-              width={500}
-              height={500}
-              className="w-6 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out "
-              alt="linkedin-image"
-            />
+              <Image
+                src="/linkedin.svg"
+                width={500}
+                height={500}
+                className="w-8 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out "
+                alt="linkedin-image"
+              />
             </Link>
             <Link href="https://www.instagram.com/milii_____/">
-            <Image
-              src="/instagram.svg"
-              width={500}
-              height={500}
-              className="w-6 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
-              alt="instagram-image"
-            />
+              <Image
+                src="/instagram.svg"
+                width={500}
+                height={500}
+                className="w-8 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
+                alt="instagram-image"
+              />
             </Link>
             <Link href="https://github.com/mili-srivastava">
-            <Image
-              src="/github.svg"
-              width={500}
-              height={500}
-              className="w-6 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
-              alt="github-image"
-            />
+              <Image
+                src="/github.svg"
+                width={500}
+                height={500}
+                className="w-8 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
+                alt="github-image"
+              />
             </Link>
-            <Link href="mailto:milisrivastava42@gmail.com"> <MdOutlineMail className="text-2xl text-yellow-600 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out" /></Link>
+            <Link href="mailto:milisrivastava42@gmail.com"> <MdOutlineMail className="text-3xl text-yellow-600 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out" /></Link>
           </div>
-          <div className="grid px-5 gap-3 justify-center py-5">
+          <div className="grid px-5 gap-3 justify-center py-5 space-y-4">
             <div className="flex gap-3 items-center hover:bg-slate-500 hover:rounded-xl transition-all hover:scale-125 px-5  cursor-pointer ">
               <MdHome className="text-2xl" />
-              <p className="text-lg text-white ">Home</p>
+              <Link href="/" onClick={closeMenu} className="text-2xl text-white ">Home</Link>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
-            <BsFillInfoCircleFill className="text-2xl" />
-              <p className="text-lg text-white ">About</p>
+              <BsFillInfoCircleFill className="text-2xl" />
+              <Link href="/" onClick={closeMenu} className="text-2xl text-white ">About</Link>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <GiStarFormation className="text-2xl" />
-              <Link href="#skills" className="text-lg text-white ">Skills</Link>
+              <Link href="#skills" onClick={closeMenu} className="text-2xl text-white">Skills</Link>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <FaFileCode className="text-2xl" />
-              <Link href="#project" className="text-lg text-white">Projects</Link>
+              <Link href="#project" onClick={closeMenu} className="text-2xl text-white">Projects</Link>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <TfiWrite className="text-2xl" />
-              <Link href="/blogs" className="text-lg text-white ">My blogs</Link>
+              <Link href="/blogs" onClick={closeMenu} className="text-2xl text-white ">My blogs</Link>
             </div>
           </div>
-          <div className="flex justify-center mx-10 mb-10">
-            <button className="bg-blue-500 w-full px-3 py-1 rounded-xl">
+          <div className="flex justify-center mx-10 my-5">
+            <Link href="#contact" className="bg-blue-500 w-full px-3 text-lg font-medium py-2 rounded-xl">
               Get In Touch
-            </button>
-            </div>
+            </Link>
+          </div>
         </div>
-        
+
       </div>
 
       <div className=" gap-5 hidden md:flex">
@@ -169,8 +169,8 @@ const Navbar = () => {
           My Blogs
         </Link>
       </div>
-      <div>
-        <Link href="#contact" className="bg-blue-500 hidden md:flex  px-3 py-1 rounded-xl">
+      <div className="">
+        <Link href="#contact" className="bg-blue-500 hidden md:flex  px-3 py-1  rounded-xl">
           Get In Touch
         </Link>
       </div>

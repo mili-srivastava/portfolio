@@ -16,7 +16,7 @@ const Skills = () => {
           Current Skill Set
         </p>
 
-        <div className="grid place-items-center grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 lg:grid-cols-5 lg:gap-0 ">
+        <div className="grid place-items-center grid-cols-2 gap-12 px-5 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 lg:grid-cols-5 lg:gap-0  ">
           <SkillsBox
             name="Next Js"
             logo="/images/nextjs.png"
@@ -45,20 +45,20 @@ const Skills = () => {
             containerClass="hover:bg-[#483D84] hidden lg:flex"
           />
         </div>
-        <div className="bg-[#1d1d1f]  h-28 rounded-xl grid place-content-center mt-5 mx-5  hover:bg-[#7550a6]">
+        <div className="bg-[#1d1d1f] my-10  h-28 rounded-xl grid place-content-center  mx-5  hover:bg-[#7550a6]">
           <div className="">
             <Image
               src="/images/dsa.png"
               alt="dsa"
               width={500}
               height={500}
-              className="w-12 h-12 mx-auto "
+              className="w-12 h-12 mx-auto animate-bounce transition"
             />
             <p className="text-xl">Data Structures And Algorithms</p>
           </div>
         </div>
 
-        <div className="grid place-items-center pb-20 grid-cols-2 sm:grid-cols-2 md:grid-cols-3  lg:gap-0 lg:grid-cols-5 my-5">
+        <div className="grid place-items-center pb-20 grid-cols-2 gap-12 px-5 sm:grid-cols-2 md:grid-cols-3  lg:gap-0 lg:grid-cols-5 my-5">
         <SkillsBox
             name="Mongo DB"
             logo="/images/mongodb.png"

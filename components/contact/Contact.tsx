@@ -4,7 +4,7 @@ import { MdOutlineMail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <div id="contact" className="bg-black h-fit w-full pt-10 pb-20 px-16">
+    <div id="contact" className="bg-black h-fit w-full pt-10 pb-20 md:px-16 px-5">
       <div className="text-center">
         <p className="text-gray-200 text-lg">Connect With Me</p>
         <p className="text-4xl md:text-5xl font-bold text-white">
@@ -12,7 +12,7 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="lg:w-[100%] rounded-xl mx-auto bg-gradient gap-10 md:flex py-10 px-16 items-center mt-16">
+      <div className="lg:w-[100%] rounded-xl mx-auto bg-gradient gap-10 md:flex py-10 md:px-16 px-5 items-center mt-16">
         <div className="lg:w-[60%] md:w-full lg:px-10">
           <section className="">
             <div className="mx-auto max-w-screen-md">
@@ -34,7 +34,7 @@ const Contact = () => {
                   />
                   <label
                     htmlFor="email"
-                    className="block  mb-2 text-sm font-medium text-gray-900 "
+                    className="block  mt-5 text-sm font-medium text-gray-900 "
                   >
                     Your Name
                   </label>
@@ -91,30 +91,30 @@ const Contact = () => {
       </div>
       <div className="w-2 h-32 mx-auto -mt-8 border-l-2 border-white"></div>
       <div>
-        <p className="text-center text-xl text-gray-300">Connect With me on</p>
-        <div className="flex gap-3 items-center justify-center z-50 py-2">
+        <p className="text-center text-xl  text-gray-300">Connect With me on</p>
+        <div className="flex gap-3 items-center justify-center z-50 py-3">
             <Image
               src="/linkedin.svg"
               width={500}
               height={500}
-              className="w-8 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out "
+              className="w-12 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out "
               alt="linkedin-image"
             />
             <Image
               src="/instagram.svg"
               width={500}
               height={500}
-              className="w-8 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
+              className="w-12 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
               alt="instagram-image"
             />
             <Image
               src="/github.svg"
               width={500}
               height={500}
-              className="w-8 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out"
+              className="w-12 transition cursor-pointer transform hover:scale-150  ease-in-out"
               alt="github-image"
             />
-            <MdOutlineMail className="text-3xl text-yellow-600 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out" />
+            <MdOutlineMail className="text-5xl text-yellow-600 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out" />
           </div>
       </div>
     </div>
