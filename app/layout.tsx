@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import Link from "next/link";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,10 +24,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <Link rel="apple-touch-icon"  href="/apple-touch-icon.png" />
+        <Link rel="icon" type="image/png" href="/favicon-32x32.png" />
+        <Link rel="manifest" href="/site.webmanifest" />
+        <Link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
       <body className={poppins.className} >
         <Navbar />
         {children}
-        
+
         <Footer /> </body>
     </html>
   );
