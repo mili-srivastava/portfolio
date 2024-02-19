@@ -4,7 +4,7 @@ import { GrDocumentDownload } from "react-icons/gr"
 
 const About = () => {
     return (
-        <div className="w-full h-fit p-3 bg-black text-white">
+        <div id="about" className="w-full h-fit p-3 bg-black text-white">
             <p className="text-5xl font-bold text-center">About Me</p>
             <p className="px-5 py-3 lg:mx-36 text-gray-300 text-center">
                 I&rsquo;m Mili Srivastava, a B.Tech. Undergrad focusing on Web Development. Proficient in Next.js, Tailwind CSS, and MongoDB, I specialize in crafting dynamic web applications. With a commitment to excellence, I constantly seek opportunities to enhance my skills and contribute meaningfully to projects.</p>

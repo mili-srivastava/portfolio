@@ -1,6 +1,8 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { FaFileCode } from "react-icons/fa";
@@ -18,6 +20,24 @@ const Navbar = () => {
   const closeMenu = () => {
     setMenu(false);
   };
+
+  const router = useRouter();
+
+  const path = (path: any) => {
+    const location = window.location.pathname;
+    console.log(location);
+    if (location === "/blogs") {
+      router.push("/" + path);
+
+
+      return path;
+    }
+    else {
+      router.push(path);
+    }
+  }
+
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -109,19 +129,19 @@ const Navbar = () => {
           <div className="grid px-5 gap-3 justify-center py-5 space-y-4">
             <div className="flex gap-3 items-center hover:bg-slate-500 hover:rounded-xl transition-all hover:scale-125 px-5  cursor-pointer ">
               <MdHome className="text-2xl" />
-              <Link href="/" onClick={closeMenu} className="text-2xl text-white ">Home</Link>
+              <button onClick={() => { path("/"); closeMenu(); }} className="text-2xl text-white ">Home</button>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <BsFillInfoCircleFill className="text-2xl" />
-              <Link href="/" onClick={closeMenu} className="text-2xl text-white ">About</Link>
+              <button onClick={() => { path("#about"); closeMenu(); }} className="text-2xl text-white ">About</button>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <GiStarFormation className="text-2xl" />
-              <Link href="#skills" onClick={closeMenu} className="text-2xl text-white">Skills</Link>
+              <button onClick={() => { path("#skills"); closeMenu(); }} className="text-2xl text-white">Skills</button>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <FaFileCode className="text-2xl" />
-              <Link href="#project" onClick={closeMenu} className="text-2xl text-white">Projects</Link>
+              <button onClick={() => { path("#project"); closeMenu(); }} className="text-2xl text-white">Projects</button>
             </div>
             <div className="flex gap-3 items-center transition-all hover:scale-125 hover:bg-gray-500 hover:rounded-xl px-5  cursor-pointer">
               <TfiWrite className="text-2xl" />
@@ -129,39 +149,39 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex justify-center mx-10 my-5">
-            <Link href="#contact" className="bg-blue-500 w-full px-3 text-lg font-medium py-2 rounded-xl">
+            <button onClick={() => path("#contact")} className="bg-blue-500 w-full px-3 text-lg font-medium py-2 rounded-xl">
               Get In Touch
-            </Link>
+            </button>
           </div>
         </div>
 
       </div>
 
       <div className=" gap-5 hidden md:flex">
-        <Link
-          href="/"
+        <button
+          onClick={() => path("/")}
           className="hover:bg-gray-700 hover:font-medium text-lg rounded-xl px-3 transition-all hover:scale-125 "
         >
           Home
-        </Link>
-        <Link
-          href="/"
+        </button>
+        <button
+          onClick={() => path("#about")}
           className="hover:bg-gray-700 hover:font-medium text-lg rounded-xl px-3 transition-all hover:scale-125 "
         >
           About
-        </Link>
-        <Link
-          href="#skills"
+        </button>
+        <button
+          onClick={() => path("#skills")}
           className="hover:bg-gray-700 hover:font-medium text-lg rounded-xl px-3 transition-all hover:scale-125 "
         >
           Skills
-        </Link>
-        <Link
-          href="#project"
+        </button>
+        <button
+          onClick={() => path("#project")}
           className="hover:bg-gray-700 hover:font-medium text-lg rounded-xl px-3 transition-all hover:scale-125 "
         >
           Projects
-        </Link>
+        </button>
         <Link
           href="/blogs"
           className="hover:bg-gray-700 hover:font-medium text-lg rounded-xl px-3 transition-all hover:scale-125 "
@@ -170,9 +190,9 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="">
-        <Link href="#contact" className="bg-blue-500 hidden md:flex  px-3 py-1  rounded-xl">
+        <button onClick={() => path("#contact")} className="bg-blue-500 hidden md:flex  px-3 py-1  rounded-xl">
           Get In Touch
-        </Link>
+        </button>
       </div>
       <IoMenuOutline
         onClick={openMenu}

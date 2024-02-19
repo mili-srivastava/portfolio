@@ -5,7 +5,7 @@ import React from "react";
 const Blog = (props:any) => {
   return (
     <div className=" w-full h-full">
-    <div className="max-w-sm h-[25rem] rounded-xl bg-[#1d1d1f] shadow mx-auto">
+    <div className="max-w-sm h-[28rem] rounded-xl bg-[#1d1d1f] shadow mx-auto">
       <Link href="#">
         <Image
           className="w-full h-40"
