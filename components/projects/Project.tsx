@@ -1,4 +1,6 @@
 import ProjectTemplate from '@/template/ProjectTemplate'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Project = () => {
@@ -17,6 +19,18 @@ const Project = () => {
             <ProjectTemplate image="/images/project4.png" title="Music Website" techImg1="/images/html.png" techImg2="/images/tailwind.png" techImg3="/images/js.png" class="w-8 h-8" link="/"/>
         </div>
         </div>
+        <div className="w-2 h-32 mx-auto  border-l-2 border-white"></div>
+        <p className='text-center text-xl text-gray-300 py-5'>Curious About The Process?</p>
+        <Link href="https://github.com/mili-srivastava" className='bg-[#1d1d1f] text-lg text-white w-fit rounded-xl gap-2 px-3 mx-auto py-2 flex items-center'>
+          Visit My Github
+            <Image
+              src="/github.svg"
+              width={500}
+              height={500}
+              className="w-10 transition cursor-pointer  animate-bounce  ease-in-out"
+              alt="github-image"
+            />
+          </Link>
     </div>
   )
 }
