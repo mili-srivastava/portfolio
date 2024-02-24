@@ -21,9 +21,9 @@ const About = () => {
                 <Education course="High School" institute="Holy Child Academy (2018-2020)" description="Completed my High School from Holy Child Academy in Jaunpur, Uttar Pradesh." />
             </div>
 
-            <Link href="resume.pdf" download="resume.pdf">
+            <Link href="/resume.pdf" download="resume.pdf">
 
-                <button className="bg-blue-600 text-lg items-center gap-2 px-5 py-2 text-white mx-auto w-fit rounded-xl flex my-8">Download My Resume
+                <button  className="bg-blue-600 text-lg items-center gap-2 px-5 py-2 text-white mx-auto w-fit rounded-xl flex my-8">Download My Resume
                 <GrDocumentDownload className="text-2xl animate-bounce" />
                 </button>
             </Link>
