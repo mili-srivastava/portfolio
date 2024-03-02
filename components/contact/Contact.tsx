@@ -1,9 +1,55 @@
+"use client"
+
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineMail } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  const handlesubmit = async (e: any) => {
+    e.preventDefault();
+    if (email === "" || name === "" || subject === "" || message === "") {
+      return toast.error('Please fill all the fields');
+
+    }
+
+    //check for valid email
+    if (!emailRegex.test(email)) {
+      return toast.error('Please enter a valid email');
+    }
+
+    try {
+      const response = await axios.post("/api/contact", {
+        email,
+        name,
+        subject,
+        message,
+      });
+      if (response.status === 201) {
+        return toast.success('Form submitted successfully');
+      }
+
+      if (response.status === 500) {
+        return toast.error('Something went wrong. Please try again later.');
+      }
+
+    } catch (error: any) {
+
+      return toast.error('Something went wrong. Please try again later.f');
+
+    }
+
+  }
   return (
     <div id="contact" className="bg-black h-fit w-full pt-10 pb-20 md:px-16 px-5">
       <div className="text-center">
@@ -18,7 +64,7 @@ const Contact = () => {
           <section className="">
             <div className="mx-auto max-w-screen-md">
 
-              <form action="#" className="space-y-5">
+              <form className="space-y-5">
                 <div>
                   <label
                     htmlFor="email"
@@ -32,6 +78,7 @@ const Contact = () => {
                     className="shadow-sm text-sm  w-full p-2.5 rounded-xl bg-[#FFFFFF66] placeholder:text-black focus:outline-none focus:border-4 focus:border-[#FFFFFF66]"
                     placeholder="name@example.com"
                     required
+                    onChange={(e) => { setEmail(e.target.value) }}
                   />
                   <label
                     htmlFor="email"
@@ -45,6 +92,7 @@ const Contact = () => {
                     className="shadow-sm text-sm  w-full p-2.5 rounded-xl bg-[#FFFFFF66] placeholder:text-black focus:outline-none focus:border-4 focus:border-[#FFFFFF66]"
                     placeholder="name@example.com"
                     required
+                    onChange={(e) => { setName(e.target.value) }}
                   />
                 </div>
                 <div>
@@ -60,6 +108,7 @@ const Contact = () => {
                     className="block p-3 w-full text-sm text-gray-900 rounded-xl bg-[#FFFFFF66] placeholder:text-black focus:outline-none focus:border-4 focus:border-[#FFFFFF66]"
                     placeholder="Let me know how I can help you"
                     required
+                    onChange={(e) => { setSubject(e.target.value) }}
                   />
                 </div>
                 <div className="sm:col-span-2">
@@ -74,10 +123,13 @@ const Contact = () => {
                     rows={5}
                     className="block p-2.5 w-full text-sm text-gray-900  rounded-xl bg-[#FFFFFF66] placeholder:text-black focus:outline-none focus:border-4 focus:border-[#FFFFFF66]"
                     placeholder="Leave a comment..."
+                    required
+                    onChange={(e) => { setMessage(e.target.value) }}
                   ></textarea>
                 </div>
                 <button
                   type="submit"
+                  onClick={handlesubmit}
                   className="py-3 px-5 text-sm font-medium text-center text-white bg-blue-600 rounded-xl mx-auto flex"
                 >
                   Send message
@@ -124,6 +176,7 @@ const Contact = () => {
           <Link href="mailto:milisrivastava42@gmail.com"><MdOutlineMail className="text-5xl text-yellow-600 cursor-pointer transform hover:scale-150 transition duration-200 ease-in-out" /></Link>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
