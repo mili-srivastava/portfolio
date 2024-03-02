@@ -94,7 +94,7 @@ const Contact = () => {
       <div>
         <p className="text-center text-xl  text-gray-300">Connect With me on</p>
         <div className="flex gap-3 items-center justify-center z-50 py-3">
-          <Link href="nkedin.com/in/mili-srivastav/">
+          <Link href="https://www.linkedin.com/in/mili-srivastav/">
             <Image
               src="/linkedin.svg"
               width={500}
