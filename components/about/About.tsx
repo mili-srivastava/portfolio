@@ -18,7 +18,7 @@ const About = () => {
 
                 <Education course="Senior Secondary" institute="Holy Child Academy (2018-2020)" description="Completed my Senior Secondary School from Holy Child Academy in Jaunpur, Uttar Pradesh with PCM." />
 
-                <Education course="High School" institute="Holy Child Academy (2018-2020)" description="Completed my High School from Holy Child Academy in Jaunpur, Uttar Pradesh." />
+                <Education course="High School" institute="Holy Child Academy (2018-2016)" description="Completed my High School from Holy Child Academy in Jaunpur, Uttar Pradesh." />
             </div>
 
             <Link href="/resume.pdf" download="resume.pdf">
