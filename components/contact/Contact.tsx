@@ -45,7 +45,7 @@ const Contact = () => {
 
     } catch (error: any) {
 
-      return toast.error('Something went wrong. Please try again later.f');
+      return toast.error('Something went wrong. Please try again later.');
 
     }
 
