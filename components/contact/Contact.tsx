@@ -13,12 +13,13 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
 
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-  const handlesubmit = async (e: any) => {
+  const handlesubmit = async (e: any) => {    
     e.preventDefault();
     if (email === "" || name === "" || subject === "" || message === "") {
       return toast.error('Please fill all the fields');
@@ -31,6 +32,7 @@ const Contact = () => {
     }
 
     try {
+      setLoading(true);
       const response = await axios.post("/api/contact", {
         email,
         name,
@@ -39,9 +41,12 @@ const Contact = () => {
       });
       if (response.status === 201) {
         toast.success('Form submitted successfully');
-        setTimeout(() => {
-          location.reload();
-        }, 3000);
+        setLoading(false);
+        setEmail("");
+        setName("");
+        setSubject("");
+        setMessage("");
+
       }
 
       if (response.status === 500) {
@@ -52,6 +57,10 @@ const Contact = () => {
 
       toast.error('Something went wrong. Please try again later.');
 
+    }
+
+    finally {
+      setLoading(false);
     }
 
   }
@@ -137,7 +146,7 @@ const Contact = () => {
                   onClick={handlesubmit}
                   className="py-3 px-5 text-sm font-medium text-center text-white bg-blue-600 rounded-xl mx-auto flex"
                 >
-                  Send message
+                  {loading ? "Loading..." : "Send Message"}
                 </button>
               </form>
             </div>
