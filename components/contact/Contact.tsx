@@ -14,6 +14,8 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
+
+
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
   const handlesubmit = async (e: any) => {
@@ -36,16 +38,19 @@ const Contact = () => {
         message,
       });
       if (response.status === 201) {
-        return toast.success('Form submitted successfully');
+        toast.success('Form submitted successfully');
+        setTimeout(() => {
+          location.reload();
+        }, 3000);
       }
 
       if (response.status === 500) {
-        return toast.error('Something went wrong. Please try again later.');
+        toast.error('Something went wrong. Please try again later.');
       }
 
     } catch (error: any) {
 
-      return toast.error('Something went wrong. Please try again later.');
+      toast.error('Something went wrong. Please try again later.');
 
     }
 
