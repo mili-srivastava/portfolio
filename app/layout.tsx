@@ -6,6 +6,7 @@ import Footer from "@/components/shared/Footer";
 import Link from "next/link";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
       </Head>
       <body className={poppins.className} >
         <Analytics />
+        <SpeedInsights />
         <Navbar />
         {children}
 
