@@ -19,7 +19,7 @@ const Skills = () => {
           Current Skill Set
         </p>
 
-        <p className="text-xl text-center mb-16 py-5 text-gray-400">PS: Try clicking on my skills</p>
+        <p className="text-xl text-center mb-16 py-5 text-gray-400">PS: Try clicking on my skills 🎶</p>
 
         <div className="grid place-items-center grid-cols-2 gap-12 px-5 sm:grid-cols-2 md:grid-cols-3 lg-grid-cols-4 lg:grid-cols-5 lg:gap-0  ">
           <SkillsBox
