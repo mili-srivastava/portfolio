@@ -1,6 +1,7 @@
 "use client"
 
 import axios from "axios";
+import { sendError } from "next/dist/server/api-utils";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -19,7 +20,8 @@ const Contact = () => {
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-  const handlesubmit = async (e: any) => {    
+
+  const handlesubmit = async (e: any) => {
     e.preventDefault();
     if (email === "" || name === "" || subject === "" || message === "") {
       return toast.error('Please fill all the fields');

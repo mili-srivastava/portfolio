@@ -7,11 +7,13 @@ import Project from "@/components/projects/Project";
 import About from "@/components/about/About";
 
 
+
 export default function Home() {
   return (
     <div className="">
      <Hero />
      <Skills />
+
      <About />
      <Contact />
      <Project />
